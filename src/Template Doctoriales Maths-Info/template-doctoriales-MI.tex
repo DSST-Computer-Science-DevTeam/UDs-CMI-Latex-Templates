@@ -1,0 +1,444 @@
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+\usepackage{mathenv}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\pagestyle{fancy}
+\usepackage{ifthen}
+\usepackage[final]{pdfpages}
+\usepackage{lipsum}
+\usepackage{multicol}
+\usepackage{titlesec}
+
+
+% *************** Définitions de quelques couleurs ***************
+\usepackage{colortbl}
+
+\definecolor{greenyellow}   {cmyk}{0.15, 0   , 0.69, 0   }
+\definecolor{yellow}        {cmyk}{0   , 0   , 1   , 0   }
+\definecolor{goldenrod}     {cmyk}{0   , 0.10, 0.84, 0   }
+\definecolor{dandelion}     {cmyk}{0   , 0.29, 0.84, 0   }
+\definecolor{apricot}       {cmyk}{0   , 0.32, 0.52, 0   }
+\definecolor{peach}         {cmyk}{0   , 0.50, 0.70, 0   }
+\definecolor{melon}         {cmyk}{0   , 0.46, 0.50, 0   }
+\definecolor{yelloworange}  {cmyk}{0   , 0.42, 1   , 0   }
+\definecolor{orange}        {cmyk}{0   , 0.61, 0.87, 0   }
+\definecolor{burntorange}   {cmyk}{0   , 0.51, 1   , 0   }
+\definecolor{bittersweet}   {cmyk}{0   , 0.75, 1   , 0.24}
+\definecolor{redorange}     {cmyk}{0   , 0.77, 0.87, 0   }
+\definecolor{mahogany}      {cmyk}{0   , 0.85, 0.87, 0.35}
+\definecolor{maroon}        {cmyk}{0   , 0.87, 0.68, 0.32}
+\definecolor{brickred}      {cmyk}{0   , 0.89, 0.94, 0.28}
+\definecolor{red}           {cmyk}{0   , 1   , 1   , 0   }
+\definecolor{orangered}     {cmyk}{0   , 1   , 0.50, 0   }
+\definecolor{rubinered}     {cmyk}{0   , 1   , 0.13, 0   }
+\definecolor{wildstrawberry}{cmyk}{0   , 0.96, 0.39, 0   }
+\definecolor{salmon}        {cmyk}{0   , 0.53, 0.38, 0   }
+\definecolor{carnationpink} {cmyk}{0   , 0.63, 0   , 0   }
+\definecolor{magenta}       {cmyk}{0   , 1   , 0   , 0   }
+\definecolor{violetred}     {cmyk}{0   , 0.81, 0   , 0   }
+\definecolor{rhodamine}     {cmyk}{0   , 0.82, 0   , 0   }
+\definecolor{mulberry}      {cmyk}{0.34, 0.90, 0   , 0.02}
+\definecolor{redviolet}     {cmyk}{0.07, 0.90, 0   , 0.34}
+\definecolor{fuchsia}       {cmyk}{0.47, 0.91, 0   , 0.08}
+\definecolor{lavender}      {cmyk}{0   , 0.48, 0   , 0   }
+\definecolor{thistle}       {cmyk}{0.12, 0.59, 0   , 0   }
+\definecolor{orchid}        {cmyk}{0.32, 0.64, 0   , 0   }
+\definecolor{darkorchid}    {cmyk}{0.40, 0.80, 0.20, 0   }
+\definecolor{purple}        {cmyk}{0.45, 0.86, 0   , 0   }
+\definecolor{plum}          {cmyk}{0.50, 1   , 0   , 0   }
+\definecolor{violet}        {cmyk}{0.79, 0.88, 0   , 0   }
+\definecolor{royalpurple}   {cmyk}{0.75, 0.90, 0   , 0   }
+\definecolor{blueviolet}    {cmyk}{0.86, 0.91, 0   , 0.04}
+\definecolor{periwinkle}    {cmyk}{0.57, 0.55, 0   , 0   }
+\definecolor{cadetblue}     {cmyk}{0.62, 0.57, 0.23, 0   }
+\definecolor{cornflowerblue}{cmyk}{0.65, 0.13, 0   , 0   }
+\definecolor{midnightblue}  {cmyk}{0.98, 0.13, 0   , 0.43}
+\definecolor{navyblue}      {cmyk}{0.94, 0.54, 0   , 0   }
+\definecolor{royalblue}     {cmyk}{1   , 0.50, 0   , 0   }
+\definecolor{blue}          {cmyk}{1   , 1   , 0   , 0   }
+\definecolor{cerulean}      {cmyk}{0.94, 0.11, 0   , 0   }
+\definecolor{cyan}          {cmyk}{1   , 0   , 0   , 0   }
+\definecolor{processblue}   {cmyk}{0.96, 0   , 0   , 0   }
+\definecolor{skyblue}       {cmyk}{0.62, 0   , 0.12, 0   }
+\definecolor{turquoise}     {cmyk}{0.85, 0   , 0.20, 0   }
+\definecolor{tealblue}      {cmyk}{0.86, 0   , 0.34, 0.02}
+\definecolor{aquamarine}    {cmyk}{0.82, 0   , 0.30, 0   }
+\definecolor{bluegreen}     {cmyk}{0.85, 0   , 0.33, 0   }
+\definecolor{emerald}       {cmyk}{1   , 0   , 0.50, 0   }
+\definecolor{junglegreen}   {cmyk}{0.99, 0   , 0.52, 0   }
+\definecolor{seagreen}      {cmyk}{0.69, 0   , 0.50, 0   }
+\definecolor{green}         {cmyk}{1   , 0   , 1   , 0   }
+\definecolor{forestgreen}   {cmyk}{0.91, 0   , 0.88, 0.12}
+\definecolor{pinegreen}     {cmyk}{0.92, 0   , 0.59, 0.25}
+\definecolor{limegreen}     {cmyk}{0.50, 0   , 1   , 0   }
+\definecolor{yellowgreen}   {cmyk}{0.44, 0   , 0.74, 0   }
+\definecolor{springgreen}   {cmyk}{0.26, 0   , 0.76, 0   }
+\definecolor{olivegreen}    {cmyk}{0.64, 0   , 0.95, 0.40}
+\definecolor{rawsienna}     {cmyk}{0   , 0.72, 1   , 0.45}
+\definecolor{sepia}         {cmyk}{0   , 0.83, 1   , 0.70}
+\definecolor{brown}         {cmyk}{0   , 0.81, 1   , 0.60}
+\definecolor{tan}           {cmyk}{0.14, 0.42, 0.56, 0   }
+\definecolor{gray}          {cmyk}{0   , 0   , 0   , 0.50}
+\definecolor{black}         {cmyk}{0   , 0   , 0   , 1   }
+\definecolor{white}         {cmyk}{0   , 0   , 0   , 0   } 
+
+% *************** Activation des liens hypertexte ***************
+\ifpdf
+    \pdfcompresslevel=9
+        \usepackage[plainpages=false,pdfpagelabels,bookmarksnumbered,%
+        colorlinks=true,%
+        linkcolor=blue,%
+        citecolor=blue,%
+        filecolor=forestgreen,%
+        urlcolor=midnightblue,%
+        pdftex,%
+        unicode]{hyperref}
+    \pdfimageresolution=600
+\else
+    \usepackage{hyperref}
+\fi
+
+\usepackage{memhfixc}
+
+% *************** Nouvelle taille *******************************
+\newcommand{\timesContentFontSize}{\fontsize{15pt}{20pt}}
+
+\titleformat{\section}{\Large\bfseries}{\thesection.}{0.2em}{}
+\titleformat{\subsection}{\bfseries}{\thesubsection.}{0.2em}{}
+\titleformat{\subsubsection}{\normalfont}{\thesubsubsection.}{0.2em}{}
+
+\newcommand*{\makeHeader}{\begingroup
+\begin{center}
+
+\end{center}
+\vspace{-2cm}
+\parindent=0pt
+\hrule height 0.4mm
+\vspace{0.5mm}
+\parbox[c]{.15\textwidth}{
+	\centering
+	{\includegraphics[width=1.4cm,height=1.7cm]{logouniv.png}}\\
+	{\small\textsc{\university}}
+}
+\parbox[c]{.65\textwidth}{
+	\centering
+	{\textbf{\eventname $~$ (\eventsession)}}\\
+	\textcolor{blue}{\textit{\eventslogan}}\\
+	\vspace{2mm}
+	\textbf{{\color{black}\optionalg} \hspace{3mm} \textbullet \hspace{3mm} {\color{black}\optionana} \hspace{3mm} \textbullet \hspace{3mm} {\color{black}\optioninf}}\\
+	\url{mailto://\eventcontact}
+}
+\parbox[c]{.2\textwidth}{
+	\centering
+	\includegraphics[width=2.9cm,height=2.9cm]{\doctorialeimg}
+}
+\vspace{0.5mm}
+\hrule height 0.8mm
+\endgroup}
+
+\renewcommand{\maketitle}
+{
+\makeHeader
+
+\vspace{2mm}
+\begin{center}
+	%\hrule
+	\textcolor{black}{{\Large\textsc{\textbf{\doctitle}}}}
+	%\hrule
+\end{center}
+%\vspace{1mm}
+\begin{center}
+	\textbf{\studentname} \\
+	{\footnotesize
+	\textit{\specialitylabel $~$ \textbf{\studentspeciality} $~$ \ifthenelse{\equal{\optsetted}{true}}{(\optionlabel: $~$ \textbf{\studentoption})}{}} \\
+	\textit{\studentaffiliation} \\
+	\textit{\studentemail}
+	}
+\end{center}
+\vspace{1mm}
+\hrule height 0.5mm
+
+%\vspace{0.5mm}
+\begin{multicols}{2}
+	\hspace{-0.6cm}
+	\begin{minipage}[t]{5cm}
+		{\scriptsize
+		\begin{flushleft}
+			\textsc{\textbf{\addinfoslabel:}}\\
+			\studentmatriculelabel: $~$ \studentmatricule \\
+			\studentlevellabel: $~$ \studentlevel \\
+			\registrationyearlabel: $~$ \studentregistrationyear \\
+			\vspace{2mm}
+			\textsc{\textbf{\researchfieldlabel:}}\\
+			\studentresearchfield \\
+			\vspace{2mm}
+			\ifthenelse{\equal{\firstdirsetted}{true}}
+			{\textsc{\textbf{\dirlabel:}}\\}
+			{
+				\ifthenelse{\equal{\secdirsetted}{true}}
+				{\textsc{\textbf{\dirlabel:}}\\}
+				{
+					\ifthenelse{\equal{\thirddirsetted}{true}}
+					{\textsc{\textbf{\dirlabel:}}\\}{}
+				}
+			}
+			\ifthenelse{\equal{\firstdirsetted}{true}}
+			{\textit{\textbf{\firstdirname}}\\
+			\textit{\firstdirgrade, \firstdiraffiliation}\\}{}
+			\ifthenelse{\equal{\secdirsetted}{true}}
+			{\vspace{1.5mm}
+			\textit{\textbf{\secdirname}}\\
+			\textit{\secdirgrade, \secdiraffiliation}\\}{}
+			\ifthenelse{\equal{\thirddirsetted}{true}}
+			{\vspace{1.5mm}
+			\textit{\textbf{\thirddirname}}\\
+			\textit{\thirddirgrade, \thirddiraffiliation}\\}{}
+		\end{flushleft}
+		}
+	\end{minipage}
+	\columnbreak
+	\hspace{0.5cm}
+	\begin{minipage}[t]{10.7cm}
+		{\footnotesize
+			\noindent\textsc{\textbf{\abstractlabel: $~$ }}
+			\docabstract
+			\begin{flushleft}
+			\noindent\textsc{\textbf{\keywordslabel: $~$ }} \dockeywords
+			\end{flushleft}
+		}
+	\end{minipage}
+\end{multicols}
+
+\vspace{3.2mm}
+\hrule height 0.5mm
+}
+
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[C]{} 
+\fancyhead[L]{}
+\fancyhead[R]{}
+
+\renewcommand{\footrulewidth}{1pt}
+\fancyfoot[R]{\textbf{\thepage}}
+\fancyfoot[L]{\footnotesize{\textsc{\eventname $~$ (\eventsession)}}}
+\fancyfoot[C]{}
+
+\headsep = 16pt
+
+\newcommand{\currentlanguage}{french}
+
+\newcommand{\eventname}{Colloque de Mathématiques et Informatique}
+\newcommand{\eventsession}{CMI-2019}
+\newcommand{\eventslogan}{Big Data Analysis : Enjeux et applications pour le développement}
+\newcommand{\eventcontact}{dept.math-info@univ-dschang.org}
+\newcommand{\optionalg}{Algèbre}
+\newcommand{\optionana}{Analyse}
+\newcommand{\optioninf}{Informatique}
+\newcommand{\specialitymath}{Mathématiques}
+\newcommand{\specialityinf}{Informatique}
+\newcommand{\dirlabel}{Directeurs}
+\newcommand{\abstractlabel}{Resumé}
+\newcommand{\keywordslabel}{Mots Clés}
+\newcommand{\specialitylabel}{Doctorant en}
+\newcommand{\researchfieldlabel}{Domaines de recherche}
+\newcommand{\thesisinfos}{Informations sur la thèse}
+\newcommand{\registrationyearlabel}{Année de première inscription}
+\newcommand{\optionlabel}{Option}
+\newcommand{\university}{Université de Dschang}
+\newcommand{\docheader}{header.png}
+\newcommand{\addinfoslabel}{Informations Supplémentaires}
+\newcommand{\studentmatriculelabel}{Matricule}
+\newcommand{\studentlevellabel}{Niveau}
+
+
+\newcommand{\switchlanguage}[1]{
+	\renewcommand{\currentlanguage}{#1}
+	\ifthenelse{\equal{#1}{french}}
+	{
+		\usepackage[frenchb]{babel}
+		\renewcommand{\eventname}{Colloque de Mathématiques et Informatique}
+		\renewcommand{\eventsession}{CMI-2019}
+		\renewcommand{\eventslogan}{Big Data Analysis : Enjeux et applications pour le développement}
+		\renewcommand{\eventcontact}{dept.math-info@univ-dschang.org}
+		\renewcommand{\optionalg}{Algèbre}
+		\renewcommand{\optionana}{Analyse}
+		\renewcommand{\optioninf}{Informatique}
+		\renewcommand{\specialitymath}{Mathématiques}
+		\renewcommand{\specialityinf}{Informatique}
+		\renewcommand{\dirlabel}{Directeurs}
+		\renewcommand{\abstractlabel}{Resumé}
+		\renewcommand{\keywordslabel}{Mots Clés}
+		\renewcommand{\specialitylabel}{Doctorant en}
+		\renewcommand{\researchfieldlabel}{Domaines de recherche}
+		\renewcommand{\thesisinfos}{Informations sur la thèse}
+		\renewcommand{\registrationyearlabel}{Année de première inscription}
+		\renewcommand{\optionlabel}{Option}
+		\renewcommand{\university}{Université de Dschang}
+		\renewcommand{\docheader}{header.png}
+		\renewcommand{\addinfoslabel}{Informations Supplémentaires}
+		\renewcommand{\studentmatriculelabel}{Matricule}
+		\renewcommand{\studentlevellabel}{Niveau}
+	}{
+		\usepackage[english]{babel}
+		\renewcommand{\eventname}{Mathematics and Informatics Colloquium}
+		\renewcommand{\eventsession}{MIC-2019}
+		\renewcommand{\eventslogan}{Big Data Analysis: Challenges and applications for development}
+		\renewcommand{\eventcontact}{dept.math-info@univ-dschang.org}
+		\renewcommand{\optionalg}{Algebra}
+		\renewcommand{\optionana}{Analysis}
+		\renewcommand{\optioninf}{Computer Science}
+		\renewcommand{\specialitymath}{Mathematics}
+		\renewcommand{\specialityinf}{Computer Science}
+		\renewcommand{\dirlabel}{Supervisors}
+		\renewcommand{\abstractlabel}{Abstract}
+		\renewcommand{\keywordslabel}{Keywords}
+		\renewcommand{\specialitylabel}{PhD Student in}
+		\renewcommand{\researchfieldlabel}{Research Fields}
+		\renewcommand{\thesisinfos}{Information about the thesis}
+		\renewcommand{\registrationyearlabel}{Year of first registration}
+		\renewcommand{\optionlabel}{Option}
+		\renewcommand{\university}{University of Dschang}
+		\renewcommand{\docheader}{headereng.png}
+		\renewcommand{\addinfoslabel}{Additional Informations}
+		\renewcommand{\studentmatriculelabel}{Matricule number}
+		\renewcommand{\studentlevellabel}{Level}
+	}
+}
+
+
+\newcommand{\doctorialeimg}{info.png}
+
+\newcommand{\doctitle}{Thème de votre recherche...}
+\renewcommand{\title}[1]{
+	\renewcommand{\doctitle}{#1}
+}
+
+\newcommand{\optsetted}{false}
+\newcommand{\studentoption}{Option de l'étudiant}
+\newcommand{\option}[1]{
+	\renewcommand{\studentoption}{#1}
+	\renewcommand{\optsetted}{true}
+	\ifthenelse{\equal{#1}{\optionalg}}
+	{\renewcommand{\doctorialeimg}{alg.png}}
+	{
+		\ifthenelse{\equal{#1}{\optionana}}
+		{\renewcommand{\doctorialeimg}{ana.png}}{}
+	}
+}
+
+\newcommand{\studentname}{Nom de l'étudiant}
+\renewcommand{\author}[1]{
+	\renewcommand{\studentname}{#1}
+}
+
+\newcommand{\studentemail}{Adresse électronique de l'étudiant}
+\newcommand{\email}[1]{
+	\renewcommand{\studentemail}{#1}
+}
+
+\newcommand{\studentaffiliation}{Université et/ou Laboratoire de l'étudiant}
+\newcommand{\affiliation}[1]{
+	\renewcommand{\studentaffiliation}{#1}
+}
+
+\newcommand{\studentregistrationyear}{20xx}
+\newcommand{\registrationyear}[1]{
+	\renewcommand{\studentregistrationyear}{#1}
+}
+
+\newcommand{\studentspeciality}{Spécialité de l'étudiant}
+\newcommand{\speciality}[1]{
+	\renewcommand{\studentspeciality}{#1}
+	\ifthenelse{\equal{#1}{\specialityinf}}
+	{\renewcommand{\doctorialeimg}{info.png}}{}
+}
+
+\newcommand{\studentresearchfield}{Domaine de recherche}
+\newcommand{\researchfield}[1]{
+	\renewcommand{\studentresearchfield}{#1}
+}
+
+\newcommand{\studentlevel}{Niveau de l'étudiant}
+\newcommand{\level}[1]{
+	\renewcommand{\studentlevel}{#1}
+}
+
+\newcommand{\studentmatricule}{Matricule de l'étudiant}
+\newcommand{\matricule}[1]{
+	\renewcommand{\studentmatricule}{#1}
+}
+
+\newcommand{\docabstract}{\lipsum*[1]}
+\renewcommand{\abstract}[1]{
+	\renewcommand{\docabstract}{#1}
+}
+
+\newcommand{\dockeywords}{First, Second, Third}
+\newcommand{\keywords}[1]{
+	\renewcommand{\dockeywords}{#1}
+}
+
+\newcommand{\curname}{1}
+\newcommand{\firstdirsetted}{false}
+\newcommand{\secdirsetted}{false}
+\newcommand{\thirddirsetted}{false}
+\newcommand{\firstdirname}{Noms du premier directeur}
+\newcommand{\secdirname}{Noms du second directeur}
+\newcommand{\thirddirname}{Noms du troisieme directeur}
+\newcommand{\adddirname}[1]{
+	\ifthenelse{\equal{\curname}{1}}
+	{\renewcommand{\firstdirname}{#1} \renewcommand{\curname}{2} \renewcommand{\firstdirsetted}{true}}
+	{
+		\ifthenelse{\equal{\curname}{2}}
+		{\renewcommand{\secdirname}{#1} \renewcommand{\curname}{3} \renewcommand{\secdirsetted}{true}}
+		{
+			\ifthenelse{\equal{\curname}{3}}
+			{\renewcommand{\thirddirname}{#1} \renewcommand{\curname}{4} \renewcommand{\thirddirsetted}{true}}
+			{}
+		}
+	}
+}
+
+\newcommand{\curgrade}{1}
+\newcommand{\firstdirgrade}{Grade du premier directeur}
+\newcommand{\secdirgrade}{Grade du second directeur}
+\newcommand{\thirddirgrade}{Grade du troisieme directeur}
+\newcommand{\adddirgrade}[1]{
+	\ifthenelse{\equal{\curgrade}{1}}
+	{\renewcommand{\firstdirgrade}{#1} \renewcommand{\curgrade}{2} \renewcommand{\firstdirsetted}{true}}
+	{
+		\ifthenelse{\equal{\curgrade}{2}}
+		{\renewcommand{\secdirgrade}{#1} \renewcommand{\curgrade}{3} \renewcommand{\secdirsetted}{true}}
+		{
+			\ifthenelse{\equal{\curgrade}{3}}
+			{\renewcommand{\thirddirgrade}{#1} \renewcommand{\curgrade}{4} \renewcommand{\thirddirsetted}{true}}
+			{}
+		}
+	}
+}
+
+\newcommand{\curaffiliation}{1}
+\newcommand{\firstdiraffiliation}{Affiliation du premier directeur}
+\newcommand{\secdiraffiliation}{Affiliation du second directeur}
+\newcommand{\thirddiraffiliation}{Affiliation du troisieme directeur}
+\newcommand{\adddiraffiliation}[1]{
+	\ifthenelse{\equal{\curaffiliation}{1}}
+	{\renewcommand{\firstdiraffiliation}{#1} \renewcommand{\curaffiliation}{2} \renewcommand{\firstdirsetted}{true}}
+	{
+		\ifthenelse{\equal{\curaffiliation}{2}}
+		{\renewcommand{\secdiraffiliation}{#1} \renewcommand{\curaffiliation}{3} \renewcommand{\secdirsetted}{true}}
+		{
+			\ifthenelse{\equal{\curaffiliation}{3}}
+			{\renewcommand{\thirddiraffiliation}{#1} \renewcommand{\curaffiliation}{4} \renewcommand{\thirddirsetted}{true}}
+			{}
+		}
+	}
+}
