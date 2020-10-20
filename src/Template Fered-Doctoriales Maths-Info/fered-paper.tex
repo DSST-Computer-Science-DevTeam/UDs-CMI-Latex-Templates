@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\input{template-doctoriales-MI}
+\input{template-UDs-MI-style}
 
 % import your packages and enter your settings here
 
@@ -7,17 +7,40 @@
 % Change language (french | english). This is compulsory
  \switchlanguage{english}
 
+% Document type (\fered | \doctorial)
+ \documentType{\fered}
+
 % Your subject...
  \title{Your subject...}
 
-% Your name
- \author{Your name}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% FERED PAPER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Authors' names
+ \author{Jerry Lacmou Zeutouo\fup{1}, Milliam Maxime Zekeng Ndadji\fup{1,2,*} \and  Vianney Kengne Tchendji\fup{1}}
+
+% Authors' addresses
+ \address{
+ \fup{1}URIFIA, Department of Mathematics and Computer Science, University of Dschang, Cameroon\\
+ \fup{2}INRIA, CNRS, University of Paris Sud, France
+ }
+ 
+% Email address of the cooresponding author
+ \email{Email address of the cooresponding author}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% DOCTORIAL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Your name
+% \author{Your name}
+ 
 % Your matricule
  \matricule{Your matricule}
 
 % Your email address
- \email{Your email address}
+% \email{Your email address}
 
 % Your speciality (enter \specialitymath for mathematics and \specialityinf for computer science)
  \speciality{\specialityinf}
@@ -65,28 +88,28 @@
 \maketitle
 
 {\normalsize
-\section{Introduction}
-	\lipsum*[1]
+	\section{Introduction}
+	\lipsum*[1] hé
 	\cite{compet08, workflow95}
-
-\section{Une section}
+	
+	\section{Une section}
 	\lipsum*[1]
-
-
-\section{Une autre section}
-
-\subsection{Une sous-section}
+	
+	
+	\section{Une autre section}
+	
+	\subsection{Une sous-section}
 	\lipsum*[1]
-
-\subsection{Une autre sous-section}
+	
+	\subsection{Une autre sous-section}
 	\lipsum*[1]
-
-
-\section{Encore un autre section}
+	
+	
+	\section{Encore un autre section}
 	\lipsum*[1]
-
-
-\section{Perspectives}
+	
+	
+	\section{Perspectives}
 	\lipsum*[1]
 }
 
