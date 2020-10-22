@@ -381,15 +381,12 @@
 \newcommand{\option}[1]{
 	\renewcommand{\studentoption}{#1}
 	\renewcommand{\optsetted}{true}
-	\ifthenelse{\equal{\documentTypeName}{\doctorial}}
+	\ifthenelse{\equal{#1}{\optionalg}}
+	{\renewcommand{\doctorialeimg}{alg.png}}
 	{
-		\ifthenelse{\equal{#1}{\optionalg}}
-		{\renewcommand{\doctorialeimg}{alg.png}}
-		{
-			\ifthenelse{\equal{#1}{\optionana}}
-			{\renewcommand{\doctorialeimg}{ana.png}}{}
-		}
-	}{}
+		\ifthenelse{\equal{#1}{\optionana}}
+		{\renewcommand{\doctorialeimg}{ana.png}}{}
+	}
 }
 
 \newcommand{\studentname}{Nom de l'étudiant}
@@ -407,7 +404,7 @@
 }
 
 \newcommand{\studentemail}{Adresse électronique de l'étudiant}
-\newcommand{\coauthoremail}{Email of the cooresponding author}
+\newcommand{\coauthoremail}{Email address of the cooresponding author}
 \newcommand{\email}[1]{
 	\ifthenelse{\equal{\documentTypeName}{\fered}}
 	{\renewcommand{\coauthoremail}{#1}}
@@ -433,11 +430,8 @@
 \newcommand{\studentspeciality}{Spécialité de l'étudiant}
 \newcommand{\speciality}[1]{
 	\renewcommand{\studentspeciality}{#1}
-	\ifthenelse{\equal{\documentTypeName}{\doctorial}}
-	{
-		\ifthenelse{\equal{#1}{\specialityinf}}
-		{\renewcommand{\doctorialeimg}{info.png}}{}	
-	}{}
+	\ifthenelse{\equal{#1}{\specialityinf}}
+	{\renewcommand{\doctorialeimg}{info.png}}{}	
 }
 
 \newcommand{\studentresearchfield}{Domaine de recherche}
@@ -532,8 +526,4 @@
 \newcommand{\documentTypeName}{\doctorial}
 \newcommand{\documentType}[1]{
 	\renewcommand{\documentTypeName}{#1}
-	\ifthenelse{\equal{\documentTypeName}{\fered}}
-	{\renewcommand{\doctorialeimg}{logo_AUF.png}}
-	{
-	}
 }
