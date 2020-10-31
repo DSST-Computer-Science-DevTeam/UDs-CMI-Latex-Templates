@@ -18,7 +18,7 @@
 \usepackage{titlesec}
 
 
-% *************** Définitions de quelques couleurs ***************
+% *************** D?finitions de quelques couleurs ***************
 \usepackage{colortbl}
 
 \definecolor{greenyellow}   {cmyk}{0.15, 0   , 0.69, 0   }
@@ -146,6 +146,57 @@
 
 \renewcommand{\maketitle}
 {
+	\ifthenelse{\equal{\documentTypeName}{\fered}}
+	{\makeTitlePaper}
+	{
+		\ifthenelse{\equal{\documentTypeName}{\doctorial}}
+		{\makeTitleDoctorial}
+		{
+			\makeTitleDoctorial
+		}
+	}
+}
+
+\newcommand{\makeTitlePaper}
+{
+\makeHeader
+
+\vspace{2mm}
+\begin{center}
+	%\hrule
+	\textcolor{black}{{\Large\textsc{\textbf{\doctitle}}}}
+	%\hrule
+\end{center}
+%\vspace{1mm}
+\begin{center}
+	\textbf{\authorname} \\
+	{\footnotesize
+	\textit{\addressname} \\
+	%\textit{\studentaffiliation} \\
+	\fup{*}Corresponding author : \textit{\coauthoremail}
+	}
+\end{center}
+\vspace{1mm}
+\hrule height 0.5mm
+
+\begin{multicols}{1}
+	\begin{minipage}[t]{15.7cm}
+		{\footnotesize
+			\noindent\textsc{\textbf{\abstractlabel: $~$ }}
+			\docabstract
+			\begin{flushleft}
+			\noindent\textsc{\textbf{\keywordslabel: $~$ }} \dockeywords
+			\end{flushleft}
+		}
+	\end{minipage}
+\end{multicols}
+
+\vspace{3.2mm}
+\hrule height 0.5mm
+}
+
+\newcommand{\makeTitleDoctorial}
+{
 \makeHeader
 
 \vspace{2mm}
@@ -158,7 +209,7 @@
 \begin{center}
 	\textbf{\studentname} \\
 	{\footnotesize
-	\textit{\specialitylabel $~$ \textbf{\studentspeciality} $~$ \ifthenelse{\equal{\optsetted}{true}}{(\optionlabel: $~$ \textbf{\studentoption})}{}} \\
+	\textit{\specialitylabel \textbf{\studentspeciality} \ifthenelse{\equal{\optsetted}{true}}{(\optionlabel: \textbf{\studentoption})}{}} \\
 	\textit{\studentaffiliation} \\
 	\textit{\studentemail}
 	}
@@ -235,9 +286,9 @@
 
 \newcommand{\currentlanguage}{french}
 
-\newcommand{\eventname}{Colloque de Mathématiques et Informatique}
-\newcommand{\eventsession}{CMI-2019}
-\newcommand{\eventslogan}{Big Data Analysis : Enjeux et applications pour le développement}
+\newcommand{\eventname}{Forum Entreprises, Recherche et Développement}
+\newcommand{\eventsession}{FERED-2020}
+\newcommand{\eventslogan}{Intélligence Artificielle, \'Economie Numérique et Transformation de l'Afrique}
 \newcommand{\eventcontact}{dept.math-info@univ-dschang.org}
 \newcommand{\optionalg}{Algèbre}
 \newcommand{\optionana}{Analyse}
@@ -247,7 +298,7 @@
 \newcommand{\dirlabel}{Directeurs}
 \newcommand{\abstractlabel}{Resumé}
 \newcommand{\keywordslabel}{Mots Clés}
-\newcommand{\specialitylabel}{Doctorant en}
+\newcommand{\specialitylabel}{Doctorant en }
 \newcommand{\researchfieldlabel}{Domaines de recherche}
 \newcommand{\thesisinfos}{Informations sur la thèse}
 \newcommand{\registrationyearlabel}{Année de première inscription}
@@ -257,16 +308,18 @@
 \newcommand{\addinfoslabel}{Informations Supplémentaires}
 \newcommand{\studentmatriculelabel}{Matricule}
 \newcommand{\studentlevellabel}{Niveau}
-
+\renewcommand{\and}{et$~$}
+\newcommand{\fered}{fered}
+\newcommand{\doctorial}{doctorial}
 
 \newcommand{\switchlanguage}[1]{
 	\renewcommand{\currentlanguage}{#1}
 	\ifthenelse{\equal{#1}{french}}
 	{
 		\usepackage[frenchb]{babel}
-		\renewcommand{\eventname}{Colloque de Mathématiques et Informatique}
-		\renewcommand{\eventsession}{CMI-2019}
-		\renewcommand{\eventslogan}{Big Data Analysis : Enjeux et applications pour le développement}
+		\renewcommand{\eventname}{Forum Entreprises, Recherche et Développement}
+		\renewcommand{\eventsession}{FERED-2020}
+		\renewcommand{\eventslogan}{Intélligence Artificielle, \'Economie Numérique et Transformation de l'Afrique}
 		\renewcommand{\eventcontact}{dept.math-info@univ-dschang.org}
 		\renewcommand{\optionalg}{Algèbre}
 		\renewcommand{\optionana}{Analyse}
@@ -276,7 +329,7 @@
 		\renewcommand{\dirlabel}{Directeurs}
 		\renewcommand{\abstractlabel}{Resumé}
 		\renewcommand{\keywordslabel}{Mots Clés}
-		\renewcommand{\specialitylabel}{Doctorant en}
+		\renewcommand{\specialitylabel}{Doctorant en }
 		\renewcommand{\researchfieldlabel}{Domaines de recherche}
 		\renewcommand{\thesisinfos}{Informations sur la thèse}
 		\renewcommand{\registrationyearlabel}{Année de première inscription}
@@ -286,11 +339,12 @@
 		\renewcommand{\addinfoslabel}{Informations Supplémentaires}
 		\renewcommand{\studentmatriculelabel}{Matricule}
 		\renewcommand{\studentlevellabel}{Niveau}
+		\renewcommand{\and}{et$~$}
 	}{
 		\usepackage[english]{babel}
-		\renewcommand{\eventname}{Mathematics and Informatics Colloquium}
-		\renewcommand{\eventsession}{MIC-2019}
-		\renewcommand{\eventslogan}{Big Data Analysis: Challenges and applications for development}
+		\renewcommand{\eventname}{Enterprise, Research and Development Forum}
+		\renewcommand{\eventsession}{EREDEF-2020}
+		\renewcommand{\eventslogan}{Artificial Intelligence, Digital Economy and African Transformation}
 		\renewcommand{\eventcontact}{dept.math-info@univ-dschang.org}
 		\renewcommand{\optionalg}{Algebra}
 		\renewcommand{\optionana}{Analysis}
@@ -300,7 +354,7 @@
 		\renewcommand{\dirlabel}{Supervisors}
 		\renewcommand{\abstractlabel}{Abstract}
 		\renewcommand{\keywordslabel}{Keywords}
-		\renewcommand{\specialitylabel}{PhD Student in}
+		\renewcommand{\specialitylabel}{PhD Student in }
 		\renewcommand{\researchfieldlabel}{Research Fields}
 		\renewcommand{\thesisinfos}{Information about the thesis}
 		\renewcommand{\registrationyearlabel}{Year of first registration}
@@ -310,6 +364,7 @@
 		\renewcommand{\addinfoslabel}{Additional Informations}
 		\renewcommand{\studentmatriculelabel}{Matricule number}
 		\renewcommand{\studentlevellabel}{Level}
+		\renewcommand{\and}{and$~$}
 	}
 }
 
@@ -335,13 +390,31 @@
 }
 
 \newcommand{\studentname}{Nom de l'étudiant}
+\newcommand{\authorname}{Noms des auteurs}
 \renewcommand{\author}[1]{
-	\renewcommand{\studentname}{#1}
+	\ifthenelse{\equal{\documentTypeName}{\fered}}
+	{\renewcommand{\authorname}{#1}}
+	{
+		\ifthenelse{\equal{\documentTypeName}{\doctorial}}
+		{\renewcommand{\studentname}{#1}}
+		{
+			\renewcommand{\studentname}{#1}		
+		}
+	}
 }
 
 \newcommand{\studentemail}{Adresse électronique de l'étudiant}
+\newcommand{\coauthoremail}{Email address of the cooresponding author}
 \newcommand{\email}[1]{
-	\renewcommand{\studentemail}{#1}
+	\ifthenelse{\equal{\documentTypeName}{\fered}}
+	{\renewcommand{\coauthoremail}{#1}}
+	{
+		\ifthenelse{\equal{\documentTypeName}{\doctorial}}
+		{\renewcommand{\studentemail}{#1}}
+		{
+			\renewcommand{\studentemail}{#1}		
+		}
+	}
 }
 
 \newcommand{\studentaffiliation}{Université et/ou Laboratoire de l'étudiant}
@@ -358,7 +431,7 @@
 \newcommand{\speciality}[1]{
 	\renewcommand{\studentspeciality}{#1}
 	\ifthenelse{\equal{#1}{\specialityinf}}
-	{\renewcommand{\doctorialeimg}{info.png}}{}
+	{\renewcommand{\doctorialeimg}{info.png}}{}	
 }
 
 \newcommand{\studentresearchfield}{Domaine de recherche}
@@ -441,4 +514,16 @@
 			{}
 		}
 	}
+}
+
+\def\fup#1{\raisebox{0.55ex}{\protect\small #1\kern+.17em}}%
+
+\newcommand{\addressname}{\fup{1}Address 1 \\ \fup{2}Address 2}
+\newcommand{\address}[1]{
+	\renewcommand{\addressname}{#1}
+}
+
+\newcommand{\documentTypeName}{\doctorial}
+\newcommand{\documentType}[1]{
+	\renewcommand{\documentTypeName}{#1}
 }
